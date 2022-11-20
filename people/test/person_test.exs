@@ -2,17 +2,25 @@ defmodule People.PersonTest do
   use ExUnit.Case
   alias People.Person
 
-  test "full_name/1 with mononyms" do
+  test "full_name" do
     teller = %Person{
-      first_name: "Teller"
+      first_name: "Ryan",
+      last_name: "Bigg"
     }
 
-    assert teller |> Person.full_name() === "Teller"
-
-    madonna = %Person{
-      first_name: "Madonna"
+    assert teller |> Person.full_name() === "Ryan Bigg"
+  end
+test "age" do
+  age =%Person{
+    birthday: ~D[1987-12-04]
+  }
+  assert age |> Person.age() === 34.96235455167693
+end
+  test "toggle_location" do
+    location = %Person{
+      location: "away"
     }
 
-    assert madonna |> Person.full_name() === "Madonna"
+    assert location |> Person.toggle_location() === %Person{location: "home"}
   end
 end
