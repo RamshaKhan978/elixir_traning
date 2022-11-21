@@ -1,4 +1,5 @@
 
+
 case File.read("haiku.txt") do
   {:ok, contents} ->
     contents
@@ -11,3 +12,5 @@ case File.read("haiku.txt") do
   {:error, _} ->
     IO.puts "Something unexpected happened, please try again."
 end
+
+  File.rm("./generated1.ex") |> IO.inspect
