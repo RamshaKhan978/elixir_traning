@@ -16,13 +16,15 @@ defmodule Recursion do
     accumulator
   end
 
-  def double_each([head | tail]) do
-    [head * 2 | double_each(tail)]
-  end
 
-  def double_each([]) do
-    []
+
+  def double_each([], _fun) do
+    :ok
+  end
+  def double_each([h|t], fun) do
+    fun.(h)
+    each(t,fun)
   end
 end
 IO.puts(Recursion.sum_list([1, 2, 3], 0))
-IO.puts(Recursion.double_each([1, 2, 3]))
+#IO.puts(Recursion.double_each([1, 2, 3], 3))
