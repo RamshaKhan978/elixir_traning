@@ -12,5 +12,7 @@ defmodule Math do
   @doc """
   Calculates the sum of two numbers.
   """
-  def sum(a, b), do: a + b
+  def sum(a, b) do
+    a + b
+  end
 end
