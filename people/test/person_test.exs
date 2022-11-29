@@ -10,17 +10,20 @@ defmodule People.PersonTest do
 
     assert teller |> Person.full_name() === "Ryan Bigg"
   end
-test "age" do
-  age =%Person{
-    birthday: ~D[1987-12-04]
-  }
-  assert age |> Person.age() === 34.96235455167693
-end
+
+  test "age" do
+    age =%Person{
+      birthday: ~D[1987-12-04]
+    }
+    assert age |> Person.age() === 34.98425735797399
+
+  end
+
   test "toggle_location" do
     location = %Person{
       location: "away"
     }
-
     assert location |> Person.toggle_location() === %Person{location: "home"}
   end
+
 end
